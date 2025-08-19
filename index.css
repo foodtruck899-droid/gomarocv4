@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Go Maroc Design System - Couleurs marocaines chaleureuses */
+
+@layer base {
+  :root {
+    --background: 35 15% 97%;
+    --foreground: 25 25% 15%;
+
+    --card: 35 15% 98%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 35 15% 98%;
+    --popover-foreground: 25 25% 15%;
+
+    /* Couleurs principales marocaines - Contrastes améliorés */
+    --primary: 25 85% 40%; /* Terre cuite/rouge marocain plus foncé pour meilleur contraste */
+    --primary-foreground: 0 0% 100%; /* Blanc pur pour contraste optimal */
+    --primary-hover: 25 85% 35%;
+
+    /* Or/ocre marocain - Contraste amélioré */
+    --accent: 45 75% 45%; /* Or plus foncé pour meilleur contraste */
+    --accent-foreground: 0 0% 100%; /* Blanc pur pour contraste optimal */
+
+    --secondary: 35 25% 85%; /* Plus foncé pour meilleur contraste */
+    --secondary-foreground: 25 25% 20%; /* Plus foncé pour contraste optimal */
+
+    --muted: 35 20% 88%; /* Légèrement plus foncé */
+    --muted-foreground: 25 25% 35%; /* Plus foncé pour contraste WCAG AA */
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 15% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 92%;
+    --ring: 25 85% 45%;
+
+    --radius: 0.75rem;
+
+    /* Gradients marocains */
+    --gradient-warm: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-sunset: linear-gradient(135deg, hsl(25 85% 45%), hsl(45 85% 55%), hsl(15 75% 50%));
+    
+    /* Animations et transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-warm: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+  }
+
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 35 15% 95%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 35 15% 95%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 35 15% 95%;
+
+    --primary: 25 85% 60%; /* Plus clair pour mode sombre */
+    --primary-foreground: 0 0% 0%; /* Noir pour contraste optimal */
+    --primary-hover: 25 85% 55%;
+
+    --secondary: 25 20% 20%; /* Plus foncé */
+    --secondary-foreground: 0 0% 100%; /* Blanc pur */
+
+    --muted: 25 20% 18%; /* Plus foncé */
+    --muted-foreground: 35 15% 70%; /* Plus clair pour meilleur contraste */
+
+    --accent: 45 75% 70%; /* Plus clair pour mode sombre */
+    --accent-foreground: 0 0% 0%; /* Noir pour contraste optimal */
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 35 15% 95%;
+
+    --border: 25 20% 20%;
+    --input: 25 20% 15%;
+    --ring: 25 85% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

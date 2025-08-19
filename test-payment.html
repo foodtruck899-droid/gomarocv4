@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Paiement</title>
+</head>
+<body>
+    <h1>Test Checkout Session</h1>
+    <button onclick="testCheckout()">Tester Réservation GM100000047</button>
+    <div id="result"></div>
+
+    <script>
+        async function testCheckout() {
+            const result = document.getElementById('result');
+            result.innerHTML = 'Test en cours...';
+            
+            try {
+                const response = await fetch('https://haxjenuqrzyzmrswkzbq.supabase.co/functions/v1/create-checkout-session', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhheGplbnVxcnp5em1yc3dremJxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQ4MjMxNDMsImV4cCI6MjA3MDM5OTE0M30.MtyZ3s3ikN-JmsATXqiokxVLVeGwzNVqL1Uavpf3ars'
+                    },
+                    body: JSON.stringify({
+                        booking_reference: 'GM100000047'
+                    })
+                });
+                
+                const data = await response.json();
+                console.log('Réponse:', data);
+                
+                if (data.url) {
+                    result.innerHTML = `<p>✅ Session créée avec succès!</p><p>URL: <a href="${data.url}" target="_blank">${data.url}</a></p>`;
+                } else {
+                    result.innerHTML = `<p>❌ Erreur: ${JSON.stringify(data, null, 2)}</p>`;
+                }
+            } catch (error) {
+                console.error('Erreur:', error);
+                result.innerHTML = `<p>❌ Erreur: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
