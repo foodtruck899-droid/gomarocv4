@@ -1,0 +1,49 @@
+project_id = "haxjenuqrzyzmrswkzbq"
+
+[functions.send-verification-email]
+verify_jwt = false
+
+[functions.create-payment]
+verify_jwt = false
+
+[functions.create-checkout-session]
+verify_jwt = false
+
+[functions.debug-checkout]
+verify_jwt = false
+
+[functions.test-stripe-key]
+verify_jwt = false
+
+[functions.verify-payment]
+verify_jwt = false
+
+[functions.send-booking-confirmation]
+verify_jwt = false
+
+[functions.send-booking-invoice]
+verify_jwt = false
+
+[functions.send-contact-email]
+verify_jwt = false
+
+[functions.test-email]
+verify_jwt = false
+
+[functions.test-send-booking]
+verify_jwt = false
+
+[functions.simple-email-test]
+verify_jwt = false
+
+[functions.purchase-gift-card]
+verify_jwt = false
+
+[functions.validate-gift-card]
+verify_jwt = false
+
+[functions.verify-gift-card-payment]
+verify_jwt = false
+
+[functions.redeem-gift-card]
+verify_jwt = false
